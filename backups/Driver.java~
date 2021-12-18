@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Driver {
+
+    Game game = new Game();
+    Scanner keyboard = new Scanner(System.in);
+    boolean play = true;
+    
+    public static void main(String[] args) {
+	while(play == true) {
+xsxc	    while (!game.isGameOver()) {
+		game.playGame();
+	    } //  while
+
+	    play = false;
+	    System.out.println("Play Again? (y/n)");	    
+	    if (keyboard.getNext().equalsIgnoreCase("Yes") || keyboard.getNext().equalsIgnoreCase("y")) {
+		play = true;
+		game = new Game();
+	    } // if
+	} // while
+    } // main
+} // Driver 

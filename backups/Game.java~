@@ -1,0 +1,70 @@
+import java.util.Scanner;
+
+public class Game {    
+
+    String[] piecePositions;
+    
+    public Game() {
+	piecePositions = new String[9];
+	for (int i = 0; i < 9; i++) {
+	    piecePositions[i] = " ";
+	} // for
+    } // Game Constructor
+
+
+    public void playGame(Scanner keyboard) {
+	
+    } // playGame
+
+    public void printBoard(String[] piecesOnBoard) {
+	System.out.print(piecesOnBaord[0]);
+	System.out.print(|);
+	System.out.print(piecesOnBoard[1]);
+	System.out.print(|);
+	System.out.println(piecesOnBoard[2]);
+
+	for (int i = 0; i < 5; i++) {
+	    System.out.print("_");
+	} // for
+	
+	System.out.print(piecesOnBaord[3]);
+	System.out.print(|);
+	System.out.print(piecesOnBoard[4]);
+	System.out.print(|);
+	System.out.println(piecesOnBoard[5]);
+
+	for (int i = 0; i < 5; i++) {
+	    System.out.print("_");
+	} // for
+
+	System.out.print(piecesOnBaord[6]);
+	System.out.print(|);
+	System.out.print(piecesOnBoard[7]);
+	System.out.print(|);
+	System.out.println(piecesOnBoard[8]);	 
+    }
+
+    public String[] getPiecePositions() {
+	return piecePositions;
+    } //getPiecePositions
+
+    public void setPiecePositions(String[] piecePositions) {
+	this.piecePositions = piecePositions;
+    } // piecePositions
+
+    public String getPiece(int position) {
+	return getPiecePositions()[position];
+    }
+
+    public void setPiece(int position, String piece) {
+	String[] tempPiecePositions = getPiecePositions();
+	tempPiecePositions[position] = piece;
+	setPiecePositions(tempPiecePositions);
+    } //setPiece
+
+    public boolean isGameOver() {
+	if (getPiece(0).equals("x") && getPiece(1).equals("x") && getPiece(2).equals("x")) {
+	} // if
+    } // isGameOver
+
+} // Game 
